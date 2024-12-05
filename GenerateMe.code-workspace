@@ -1,0 +1,112 @@
+{
+	"folders": [
+		{
+			"path": "blendimages"
+		},
+		{
+			"path": "composite_video_simulator"
+		},
+		{
+			"path": "cutsort"
+		},
+		{
+			"path": "decayscreen"
+		},
+		{
+			"path": "decompose_paint"
+		},
+		{
+			"path": "distorter"
+		},
+		{
+			"path": "drawing_generative"
+		},
+		{
+			"path": "drawing_strokes"
+		},
+		{
+			"path": "fm"
+		},
+		{
+			"path": "fractalify"
+		},
+		{
+			"path": "GLIC"
+		},
+		{
+			"path": "granularresynth"
+		},
+		{
+			"path": "imagelens"
+		},
+		{
+			"path": "imageslicer"
+		},
+		{
+			"path": "imsyntex"
+		},
+		{
+			"path": "lz77_images"
+		},
+		{
+			"path": "lz77_raws"
+		},
+		{
+			"path": "median_filter"
+		},
+		{
+			"path": "mirrorimage"
+		},
+		{
+			"path": "moire"
+		},
+		{
+			"path": "ntsc_analogtv"
+		},
+		{
+			"path": "Obj2Raw"
+		},
+		{
+			"path": "pix2line"
+		},
+		{
+			"path": "pixeldrifter"
+		},
+		{
+			"path": "pngglitch"
+		},
+		{
+			"path": "PROCESSING 3"
+		},
+		{
+			"path": "shufflestream"
+		},
+		{
+			"path": "slitscan"
+		},
+		{
+			"path": "sonification"
+		},
+		{
+			"path": "TEMPLATE"
+		},
+		{
+			"path": "threadraw"
+		},
+		{
+			"path": "ultimateSort"
+		},
+		{
+			"path": "watmap"
+		},
+		{
+			"path": "wavelets"
+		},
+		{
+			"path": "wrongqsort"
+		},
+		{
+			"path": "wzipprocess2"
+		}
+	]
+}

@@ -56,9 +56,11 @@ void setup() {
   sessionid = hex((int)random(0xffff), 4);
   img = loadImage(foldername+filename+fileext);
   img.loadPixels();
-
+  
   buffer = createGraphics(img.width, img.height);
-  buffer.loadPixels();
+  buffer.beginDraw();
+  buffer.image(img, 0, 0);
+  buffer.endDraw();
 
   // calculate window size
   float ratio = (float)img.width/(float)img.height;
@@ -71,7 +73,7 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww, newh);
+  surface.setSize(neww, newh);
 
   for (int i=0; i<pattern_length; i++) {
     String suf = nf(i+pattern_init, pattern_size);

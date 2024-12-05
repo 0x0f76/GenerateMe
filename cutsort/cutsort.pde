@@ -105,7 +105,7 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww,newh);
+  surface.setSize(neww,newh);
   
   processImage();
 }

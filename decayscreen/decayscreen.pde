@@ -27,9 +27,11 @@ String sessionid;
 void setup() {
   sessionid = hex((int)random(0xffff),4);
   img = loadImage(foldername+filename+fileext);
-  
+
   buffer = createGraphics(img.width, img.height);
-  buffer.image(img,0,0); 
+  buffer.beginDraw();  
+  buffer.image(img,0,0);
+  buffer.endDraw();
   
   // calculate window size
   float ratio = (float)img.width/(float)img.height;
@@ -42,7 +44,7 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww,newh);
+  surface.setSize(neww,newh);
   frameRate(100); 
   
   printStats();

@@ -52,9 +52,9 @@ int max_display_size = 1000; // viewing window size (regardless image size)
 boolean composite_in_chroma_lowpass = true; // low pass filter on input chroma values
 int subcarrier_amplitude = 40; // values: 1-200
 int subcarrier_amplitude_back = subcarrier_amplitude + 0; // values similar to subcarrier_amplitude
-int video_scanline_phase_shift = 0; // 0,90,180,270
+int video_scanline_phase_shift = 90; // 0,90,180,270
 int video_scanline_phase_shift_offset = 0; // 0, 90, 180, 270
-float composite_preemphasis = 1; // signal amplification: 1-100 
+float composite_preemphasis = 71; // signal amplification: 1-100 
 float composite_preemphasis_cut = 315000000 / 88.0; // filter cutoff
 int video_noise = 4000; // luma noise
 int video_chroma_noise = 4000; // chroma noise
@@ -63,7 +63,7 @@ boolean composite_out_chroma_lowpass = true; // filter output
 boolean composite_out_chroma_lowpass_lite = false; // true = lite filter, false = strong filter
 float video_chroma_loss = 0.24; // loss of color probability
 boolean vhs_svideo_out = true; // use composite video as output
-int[] emulating_vhs = VHS_SP; // VHS_SP, VHS_LP, VHS_EP
+int[] emulating_vhs = VHS_LP; // VHS_SP, VHS_LP, VHS_EP
 boolean vhs_chroma_vert_blend = true; // blend colors
 boolean vhs_sharpen = true; // sharpen image
 float vhs_out_sharpen = 2; // sharpen amount
@@ -125,7 +125,7 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww,newh);
+  surface.setSize(neww,newh);
   
   processImage();
 }
@@ -818,7 +818,7 @@ boolean doBatch = false;
 float batchFiles = 0;
 void batchProcess() {
   batchUID = sessionid + hex((int)random(0xffff), 4);
-  File dir = new File(sketchPath+'/'+foldername);
+  File dir = new File(foldername);
   batchList = dir.listFiles();
   batchIdx = 0;
   batchFiles = 0;

@@ -51,17 +51,17 @@ PGraphics buffer;
 // image
 PImage img;
 
+int dirty;
+
 String sessionid;
 
 void setup() {
+  dirty = 0;
   sessionid = hex((int)random(0xffff),4);
   img = loadImage(foldername+filename+fileext);
   
   buffer = createGraphics(img.width, img.height);
-  buffer.beginDraw();
-  buffer.noStroke();
-  buffer.smooth(8);
-  buffer.background(0);
+  buffer.beginDraw();  
   buffer.image(img,0,0);
   buffer.endDraw();
   
@@ -76,14 +76,14 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww,newh);
+  surface.setSize(img.width, img.height);
   p = new Planes(img);
   
   processImage();
 }
 
 void draw() {
-  // fill for iterative processing
+  image(buffer, 0, 0);
 }
 
 void mouseClicked() {

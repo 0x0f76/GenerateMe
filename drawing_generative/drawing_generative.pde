@@ -66,7 +66,7 @@ void setup() {
     newh = (int)(max_display_size / ratio);
   }
 
-  size(neww,newh);
+  surface.setSize(neww,newh);
   
   len = (img.width<img.height?img.width:img.height)/6;
   
